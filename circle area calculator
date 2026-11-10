@@ -1,0 +1,28 @@
+"""
+Circle Area Calculator
+
+Prompts the user for a radius, validates the input,
+and calculates the area using pi * radius squared.
+"""
+
+import math
+
+while True:
+    try:
+        radius = float(input("Enter the circle's radius: ").strip())
+
+        if not math.isfinite(radius):
+            print("Please enter a finite number.")
+        elif radius < 0:
+            print("Radius cannot be negative. Try again.")
+        else:
+            break
+
+    except ValueError:
+        print("Invalid input. Enter a number such as 5 or 2.5.")
+
+area = math.pi * radius ** 2
+
+print(f"\nRadius: {radius:.2f}")
+print(f"Circle area: {area:.2f}")
+print("Calculation completed successfully.")
